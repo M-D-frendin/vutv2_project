@@ -299,11 +299,13 @@ section.bottom {
 .articlegrid {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .articlegrid article {
     flex-grow: 1;
     width: 33%;
+    max-width: 100%;
 }
 
 .articlegrid article .content {
@@ -329,6 +331,9 @@ section.bottom {
 
 @media only screen and (max-width: 641px) {
 
+    body {
+        padding-right: 2em;
+    }
     #hamburgermenu {
         display: block;
         position: fixed;
