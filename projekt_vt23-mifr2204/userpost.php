@@ -52,7 +52,7 @@ $posts = $user->getPosts($page, $pagesize);
 ?>
     <h1><?=$page_title;?></h1>
 
-
+<div>
 <table class="table">
     <thead>
         <tr>
@@ -132,6 +132,8 @@ for ($i = 1; $i <= $numberOfPages; $i++) {
 echo '<li><a href="' . $url . '&page=' . $numberOfPages . '">>|</a></li>';
 ?>
 </ul>
+
+</div>
 
 
 <?php
