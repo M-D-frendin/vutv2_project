@@ -1,18 +1,16 @@
 <?php
-include('includes/header.php');
-include('includes/sidemenu.php');
 include_once('system/common.php');
 include_once('includes/classes/User.class.php');
 
-?>
+//header & sidemenu
+include('includes/header.php');
+include('includes/sidemenu.php');
 
 
-<h2>Skapa konto</h2>
-
-<?php
 $showform = true;
 $displaybutton = false;
 
+//om formulär är skickat, försök skapa ny användare
 if(isset($_POST['email'])) {
     $newUserArgs = array('forname' => $_POST['forname'], 'lastname' => $_POST['lastname'], 'email' => $_POST['email'], 'username' => $_POST['username'], 'password' => $_POST['password']);
 
@@ -30,8 +28,11 @@ if(isset($_POST['email'])) {
     }
 
 }
+?>
+<h2>Skapa konto</h2>
 
-
+<?php
+//om formuläret ska visas (om en användare inte precis har skapats)
 if ($showform) {
     ?>
 <form action="./newuser.php" method="post">
@@ -66,22 +67,14 @@ if ($showform) {
 </div>
 
 </form>
-    <?php
-}
-//fix me skapa verify password så båda är lika, 
-    if(isset($message)) {
-        echo $message;
-    }
-    /*
-    if($displaybutton) {
-        ?>
-            <a id="toLgInBtn" href="./login.php">Till Logga in</a>
-        <?php
-    }
-*/
-    ?>
-
 <?php
-include('includes/footer.php');
+}
 
+//visa dynamiskt meddelande
+if(isset($message)) {
+    echo $message;
+}
+
+//footer
+include('includes/footer.php');
 ?>

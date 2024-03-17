@@ -2,12 +2,12 @@
 include_once('system/common.php');
 include_once('includes/classes/Post.class.php');
 
+//header
 include('includes/header.php');
 
 
 
-$posts = Post::allPostsWithLimit(5); //skapar en instans av posts med alla posts GG
-//FIX ME  fixa så blogginläggen sorteras eller hamnar på flera sidor, ev visa hela och ta bort visa mer? visa smakprover?  
+$posts = Post::allPostsWithLimit(5); //skapar en lista med Post instanser med alla posts GG
 ?>
     <h1>Blogginlägg</h1>
 
@@ -17,7 +17,10 @@ $posts = Post::allPostsWithLimit(5); //skapar en instans av posts med alla posts
 <main >
     
     <?php
+    //visa sidemenu
     include('includes/sidemenu.php');
+
+    //visa alla Posts
     foreach($posts as $post) {
     ?>
         <article>
@@ -39,6 +42,6 @@ $posts = Post::allPostsWithLimit(5); //skapar en instans av posts med alla posts
 
 </main>
 <?php
-
+//footer
 include('includes/footer.php');
 ?>

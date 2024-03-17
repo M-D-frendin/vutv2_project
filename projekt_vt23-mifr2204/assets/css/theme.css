@@ -83,6 +83,7 @@ section.mid > .container {
     display: flex;
     max-width: 1600px;
     flex-wrap: wrap;
+    overflow: auto;
 }
 
 /*Body-Mid-nav*/
@@ -198,10 +199,6 @@ section.bottom {
 }
 /*table*/
 
-.table {
-    width: 100%;
-}
-
 .table, .table tbody {
     width: 100%;
 }
@@ -217,125 +214,33 @@ section.bottom {
     font-size: 14px;
 }
 
-/*textboxes
+.table tr, .table tr td {
+    height: 1em;
+}
 
-
-/*Form
-
-/*status message
-.status {
-    padding: 1em;
+.table tr:hover td {
     background: rgba(0,0,0,.1);
-    font-size: 12px;
-    font-weight: 700;
-    display: block;
-    border-radius: 3px;
 }
 
-.status.red {
-    background: rgb(163, 5, 5);
-    color: #ffffff;
-}
-
-
-
-message box
-
-
-
-
-
-
-
-/*index*/
-
-/*
-
-nav.breadcrumbs ul {
+.pagination {
     list-style: none;
+    display: block;
 }
 
-nav.breadcrumbs ul li {
+.pagination li {
     display: inline-block;
+    margin: 0 .1em;
 }
 
-nav.breadcrumbs ul li > *::before {
-    content:"›";
-    padding: 0 .5em;
+.pagination li a {
+    padding: .2em .4em;
+    background-color: aquamarine;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
 }
 
-nav.breadcrumbs ul li:first-child > *::before {
-    content:"";
-    padding: 0;
+.pagination li a.current {
+    background-color: #aaaaaa;
+    border: 1px solid #aaaaaa;
 }
-
-* {
-    box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-}
-
-input[type=button].primary, input[type=submit].primary, button.primary, .button.primary {
-    background: #2980b9;
-    color: #ffffff;
-}
-
-section.document {
-    flex: 1;
-}
-
-.container {
-    width: 1200px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-section.top {
-    border-bottom: 2px solid black;
-}
-
-section.mid {
-    margin-top: 3em;
-}
-.modal {
-    padding: 2em;
-    border: 1px solid rgba(0,0,0,.4);
-    margin-bottom: 2em;
-    border-radius: 3px;
-}
-
-.modal .content {
-    margin: 1em 0;
-}
-
-.modal form {
-    text-align: right;
-}
-
-section.divider {
-    margin-top: 2em;
-    padding-top: 2em;
-    border-top: 2px solid rgba(0,0,0,.8);
-}
-
-
-
-
-section.document article {
-    border: 1px solid #000000;
-    padding: 2em;
-    margin-bottom: 1em;
-}
-/*
-    Posts
-*/
-
-
-*/
-
-
-
-

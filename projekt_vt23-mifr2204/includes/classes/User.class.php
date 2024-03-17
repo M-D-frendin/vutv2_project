@@ -27,7 +27,7 @@ class User {
         if (strlen($value) < 4) {
             throw new Exception('Användarnamn måste vara minst 4 tecken långt.');
         }
-        if (strlen($value) > 50) {
+        if (strlen($value) > 14) {
             throw new Exception('Användarnamn får inte vara över 50 tecken långt.');
         }
         $this->username = $value;
@@ -236,6 +236,17 @@ class User {
             throw new Exception('Kan inte avgöra inloggad användare.');
         }
         return User::getUnique($_SESSION['userid']);
+    }
+
+    //är användaren inloggad?
+    public static function isAuthenticated(): bool {
+        if (array_key_exists('userid', $_SESSION))
+        {
+            if (is_int($_SESSION['userid'])) {
+                return true;
+            }
+        }
+        return false;
     }
 
     //hämtar alla användarens posts

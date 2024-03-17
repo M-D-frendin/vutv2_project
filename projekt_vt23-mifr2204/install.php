@@ -1,5 +1,5 @@
 <?php
-include("system/config.php");
+include("system/common.php");
 
 $message = false;
 

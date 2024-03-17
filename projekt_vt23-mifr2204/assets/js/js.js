@@ -21,7 +21,6 @@ blogglink.onclick = function(){
 };
 
 //döljer/visar listan för användare
-//fixme varför funkar den inte?
 
 userlistbtn = document.getElementById('userlistbtn');
 

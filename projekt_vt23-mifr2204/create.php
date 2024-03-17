@@ -1,23 +1,19 @@
 <?php
+include_once('system/common.php');
 include_once('includes/classes/User.class.php');
 include_once('includes/classes/Post.class.php');
-include_once('system/common.php');
-include_once('system/config.php');
+
+//header & sidemenu
 include('includes/header.php');
 include('includes/sidemenu.php');
-    
-if(!isset($_SESSION['username'])) {
-        header('location: login.php?message=Du måste vara inloggad');
- }  
 
+//användare måste vara inloggad för att på se sidan
+if(!User::isAuthenticated()) {
+    header('location: login.php?message=Du måste vara inloggad');
+    die();
+}
 
-//logout 
-
-?>
-
-<h2>Skapa Blogginlägg</h2>
-<?php
-
+//om formulär har skickats, försök skapa ny Post
 if(isset($_POST['title'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
@@ -34,11 +30,16 @@ if(isset($_POST['title'])) {
         $message = '<div class="alert">' . $e->getMessage() . '</div>';
     }
 }
+?>
 
+<h2>Skapa Blogginlägg</h2>
+<?php
+//visa dynamiskt meddelande
 if(isset($message)) {
     echo $message;
 }
 
+//visa formulär om formulär inte har skickats
 if(!isset($_POST['title'])) {
 ?>
 <div id="createForm">
@@ -58,12 +59,12 @@ if(!isset($_POST['title'])) {
     </form>
 </div>
 <?php
-        }
+}
 ?>
 <script>
     CKEDITOR.replace( 'content' );
 </script>
-<script type="text/javascript" src="assets/js/js.js"></script>
 <?php
+//footer
 include('includes/footer.php');
 ?>

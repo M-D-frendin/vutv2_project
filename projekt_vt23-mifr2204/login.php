@@ -1,21 +1,12 @@
 <?php
-include('includes/header.php');
-include_once('includes/classes/User.class.php');
 include_once('system/common.php');
-/*
-if(isset($_POST['username'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+include_once('includes/classes/User.class.php');
 
-    if($username === "blogg" && $password === "password") {
-        $_SESSION['username'] = $username;
-        header("location: ./blogg.php");
-    } else {
-        $message = "<div class='alert'>Fel användarnamn eller lösenord</div>";
-    }
-}
-*/
+//header & sidemenu
+include('includes/header.php');
 
+
+//om formulär är postat, försök logga in
 if(isset($_POST['username']) && isset($_POST['password'])) {
 
     try {
@@ -28,32 +19,10 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 }
 
 
-
-
-//if(isset($_GET[$message = "<div class='alert'>" . $_GET['message'] . "</div>"]));
-//FIXME?
-
-
-//login or warns that it is wrong usernme or password
-/*if (isset($_POST['username']) && isset($_POST['password'])) {
-    if ($_POST['username'] && $_POST['password']) {
-        include_once('includes/classes/Authentication.class.php');
-        $result = authentication::authenticate($_POST['username'], $_POST['password']);
-        if ($result) {
-            header("Location: ./blogg.php");
-            die();
-        }
-        else {
-            echo '<div class="status red">⚠️ Fel användarnamn och/eller lösenord.</div>';
-        }
-    }
-}
-*/
-//logout 
+//om sidan har ?action=logout, visa meddelande att användaren har loggat ut 
 if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'logout') {
     echo '<div class="status">✔️ Du har nu loggat ut.</div>';
 }
-
 ?>
   <h1>Logga in</h1>
 
@@ -74,6 +43,7 @@ include('includes/sidemenu.php');
             <input type="password" name="password" id="password" />
         </div>
         <?php
+            //dynamiskt meddelande
             if(isset($message)) {
                 echo $message;
             }
@@ -88,4 +58,6 @@ include('includes/sidemenu.php');
     </form>
 </main>
 <?php
+//footer
 include('includes/footer.php');
+?>

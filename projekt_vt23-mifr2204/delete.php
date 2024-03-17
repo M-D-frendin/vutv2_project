@@ -1,28 +1,40 @@
 <?php
 include_once('system/common.php');
-include('includes/header.php');
-include('includes/sidemenu.php');
 include_once('includes/classes/Post.class.php');
 include_once('includes/classes/User.class.php');
 
+//header & sidemenu
+include('includes/header.php');
+include('includes/sidemenu.php');
 
+//användare måste vara inloggad för att på se sidan
+if(!User::isAuthenticated()) {
+    header('location: login.php?message=Du måste vara inloggad');
+    die();
+}
+
+//om formulär har skickats, radera valda Posts
 if(isset($_POST['checkboxn'])) {
     foreach($_POST['checkboxn'] as $id)
     {
-        $post = Post::getUnique($id);
-        $post->delete();
+        try {
+            $post = Post::getUnique($id);
+            $post->delete();
+        } catch (Exception $e) {
+            $message = '<div class="alert">' . $e->getMessage() . '</div>';
+        }
     }
 }
 
+//hämta alla posts för inloggad användare
 $user = User::getLoggedInUser();
 $posts = $user->getPosts();
 
 
-
+//felmeddelande
 if(isset($message)) {
     echo $message;
 }
-
 ?>
 
 
@@ -47,25 +59,6 @@ foreach($posts as $post) {
     </ul>
     <?php
 }
-
-/*
-foreach($post as $item) {
-    if(isset($_POST['checkboxn'])) {
-       echo $item['id'];
-
-        $id = $item['id'];
-       // echo $id;
-        //$postToDel = $_POST['checkboxn'];
-        //foreach($postToDel as $item){    
-
-            
-          
-             $delp = $posts->delPost($id);
-           
-        //}
-    }
-}
-*/
 ?>
     
     <div class="form-field">
@@ -75,9 +68,6 @@ foreach($post as $item) {
 </form>
 
 <?php
-
-//navcont och last ska vara lika typ
-
-
+//footer
 include('includes/footer.php');
 ?>

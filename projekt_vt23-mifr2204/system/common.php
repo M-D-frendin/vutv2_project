@@ -1,15 +1,12 @@
 <?php
-/*
-include_once('includes/classes/Authentication.class.php');
+//starta phps sessionshantering
+session_start();
 
-if (authentication::is_authenticated()) {
-    authentication::refresh_expires();
-}
+//visa alla php fel och notiser
+error_reporting(-1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);    
 
 
-$request = explode("/", @$_SERVER['REQUEST_URI']);
-array_shift($request);
-$G_REQUEST = $request;
-if (!$G_REQUEST[0])
-    $G_REQUEST[0] = 'start';
-*/
+//läs in configurationsvariabler
+include_once('config.php');

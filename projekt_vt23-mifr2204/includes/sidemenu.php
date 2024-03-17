@@ -13,46 +13,44 @@
                 </li>
                 
 <?php
-//if loged in returns other navs
-if(isset($_SESSION['username'])) {
-    ?>
+        //om användaren är inloggad, visa logga ut knappen
+        if(User::isAuthenticated()) {
+?>
         <li>
             <a class="mainmen" id="logoutbtn" href="./logout.php">Logga ut</a>
         </li>
-    <?php
-    } else
-    {
-    ?>
+<?php
+        } else {
+        // ... annars visa logga in knappen
+?>
         <li>
             <a class="mainmen" id="loginbtn" href="./login.php" >Logga in</a>      
         </li>
          
-    <?php
-    }
+<?php
+        }
     
-    if(isset($_SESSION['username'])) { 
-        ?>
-            <li>
+        //om användaren är inloggad, visa blogg menyn
+        if(User::isAuthenticated()) {
+?>
+        <li>
             <a href="#" id="blogglink" >BLOGG MENY &dArr;</a>
-            </li>
-            <li>
-            <a class="submenu" id="alllink" href="./userpost.php" >alla mina INLÄGG</a>
-            </li>
-            <li>
+        </li>
+        <li>
+            <a class="submenu" id="alllink" href="./userpost.php" >ALLA MINA INLÄGG</a>
+        </li>
+        <li>
             <a class="submenu" id="createlink" href="./create.php" >SKAPA INLÄGG</a>
-            </li>
-            <li>
+        </li>
+        <li>
             <a class="submenu" id="deletelink" href="./delete.php" >RADERA INLÄGG</a>
-            </li>
-        <?php
-    }
-    
-
- //FIX me ta bort logga in på sidemeny när inloggad, lägg till logga ut 
+        </li>
+<?php
+        }
 ?>
         </ul>
 <?php
-        $users = User::allUsers();//skapar en instans av user med alla users GG
+        $users = User::allUsers(); //skapar en array av User instanser med alla users GG
     ?>
     <div class="users">
         <ul>
@@ -61,6 +59,7 @@ if(isset($_SESSION['username'])) {
         </li>
     <?php
         foreach($users as $user) {
+            //räkna hur många posts varje användare har
             $numerOfPosts = Post::countPostsByUserId($user->id);
     ?>
             <li><a class="submenu" class="button" class="userlist" href="./userpost.php?userid=<?= $user->id; ?>"><?= $user->username; ?> (<?= $numerOfPosts; ?>)</a></li>   
@@ -71,8 +70,4 @@ if(isset($_SESSION['username'])) {
     </div>
             </nav>
         <div class="container">
-
-<script type="text/javascript" src="assets/js/js.js"></script>
-
-
 

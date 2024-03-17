@@ -13,5 +13,7 @@
         </section>
 
 
+        <script type="text/javascript" src="assets/js/js.js"></script>
+        
     </body>
 </html>

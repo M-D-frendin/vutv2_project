@@ -116,8 +116,8 @@ class Post {
     //sparar ändringar i post till databasen
     public function update(): void {
         $dbm = DatabaseManager::getInstance();
-        $stmt = $dbm->mysqli->prepare('UPDATE posts SET userid=?, title=?, content=? WHERE id=?);');
-        $stmt->bind_param('issi', $post->userId, $post->title, $post->content, $post->id);
+        $stmt = $dbm->mysqli->prepare('UPDATE posts SET userid=?, title=?, content=? WHERE id=?;');
+        $stmt->bind_param('issi', $this->userId, $this->title, $this->content, $this->id);
         $stmt->execute();
     }
 
