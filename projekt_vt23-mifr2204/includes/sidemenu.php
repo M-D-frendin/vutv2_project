@@ -5,7 +5,7 @@
 
 <section class="mid">
         
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             
             <ul>
                 <li>

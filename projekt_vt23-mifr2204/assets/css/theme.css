@@ -1,4 +1,8 @@
 /*font and text-general*/
+* {
+    box-sizing: border-box;
+}
+
 h1 { /*FIX ME SKAPA HAMB MENY*/
     text-align: center;
     position: absolute;
@@ -243,4 +247,48 @@ section.bottom {
 .pagination li a.current {
     background-color: #aaaaaa;
     border: 1px solid #aaaaaa;
+}
+
+#hamburgermenu {
+    display: none;
+}
+
+@media only screen and (max-width: 641px) {
+
+    #hamburgermenu {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 64px;
+        height: 64px;
+        z-index: 10010;
+        background-color: rgba(20,20,20,.8);
+        padding: 1em;
+        cursor: pointer;
+        transition: background-color ease-in-out .2s;
+    }
+
+    #hamburgermenu:hover {
+        background-color: rgba(0,0,0,1);
+    }
+
+    nav.sidebar {
+        position: fixed;
+        padding-left: 6em;
+        left: -110vw;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        background: #aaa;
+        z-index: 10000;
+        overflow-y: auto;
+        transition: left ease-in-out .2s;
+        margin: 0;
+    }
+
+    nav.sidebar.open {
+        left: 0;
+    }
+
 }

@@ -48,3 +48,14 @@ if (createbtn) {
         return false;
     };
 }
+
+
+let hamburgermenu = document.getElementById('hamburgermenu');
+hamburgermenu.onclick = function(){
+    let sidebar = document.getElementById("sidebar");
+    if (sidebar.className === "sidebar") {
+        sidebar.className = 'sidebar open';
+    } else {
+        sidebar.className = 'sidebar';
+    }
+};
