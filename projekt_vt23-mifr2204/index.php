@@ -5,6 +5,7 @@ include_once('system/common.php');
 include_once('includes/classes/Post.class.php');
 
 //header
+$page_title = 'Blogginlägg';
 include('includes/header.php');
 
 

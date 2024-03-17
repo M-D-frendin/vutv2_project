@@ -6,6 +6,7 @@ include_once('includes/classes/User.class.php');
 include_once('includes/classes/Post.class.php');
 
 //header & sidemenu
+$page_title = 'Skapa Blogginlägg';
 include('includes/header.php');
 include('includes/sidemenu.php');
 

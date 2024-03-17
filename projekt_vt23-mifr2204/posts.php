@@ -5,6 +5,7 @@ include_once('system/common.php');
 include_once('includes/classes/Post.class.php');
 
 //header & sidemenu
+$page_title = $post->title;
 include('includes/header.php');
 include('includes/sidemenu.php');
 

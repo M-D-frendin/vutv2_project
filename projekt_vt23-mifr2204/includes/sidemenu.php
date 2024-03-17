@@ -2,7 +2,7 @@
 /*Skapad av Mikaela Frendin mifr2204@student.miun.se*/
 
     include_once('system/config.php');
-    include_once('includes\classes\User.class.php');
+    include_once('includes/classes/User.class.php');
 ?>
 
 <section class="mid">

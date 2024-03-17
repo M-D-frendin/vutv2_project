@@ -5,6 +5,7 @@ include_once('system/common.php');
 include_once('includes/classes/User.class.php');
 
 //header & sidemenu
+$page_title = 'Logga in';
 include('includes/header.php');
 
 
