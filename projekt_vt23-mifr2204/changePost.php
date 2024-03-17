@@ -58,19 +58,19 @@ $post = Post::getUnique($id);
     <form action="./changePost.php?id=<?php echo $_GET['id']; ?>" method="post">
         <div class="form-field">
             <label for="postid">ID</label>
-            <input type="text" name="postid" id="postid" value="<?= $post->id; ?>" disabled />
+            <input type="text" name="postid" id="postid" value="<?= $post->id; ?>" class="maxsize" disabled />
         </div>
         <div class="form-field">
             <label for="title">Titel</label>
-            <input type="text" name="title" id="title" value="<?= $post->title; ?>"/>
+            <input type="text" name="title" id="title" value="<?= $post->title; ?>" class="maxsize" />
         </div>
         <div class="form-field">
             <label for="content">Innehåll</label>
-            <textarea name="content" id="content" rows="15"><?= $post->content; ?></textarea>
+            <textarea name="content" id="content" rows="15" class="maxsize"><?= $post->content; ?></textarea>
         </div>
 
         <div class="form-field">
-            <input id="createbtn" type="submit" value="Uppdatera Inlägg" />
+            <input id="createbtn" type="submit" value="Uppdatera Inlägg" class="button flat" />
         </div>
     </form>
 </div>
