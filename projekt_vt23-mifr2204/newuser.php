@@ -5,6 +5,7 @@ include_once('system/common.php');
 include_once('includes/classes/User.class.php');
 
 //header & sidemenu
+$page_title = 'Skapa konto';
 include('includes/header.php');
 include('includes/sidemenu.php');
 
@@ -31,7 +32,7 @@ if(isset($_POST['email'])) {
 
 }
 ?>
-<h1>Skapa konto</h1>
+    <h1><?=$page_title;?></h1>
 
 <?php
 //om formuläret ska visas (om en användare inte precis har skapats)

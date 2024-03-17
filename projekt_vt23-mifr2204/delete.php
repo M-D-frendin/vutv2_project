@@ -6,6 +6,7 @@ include_once('includes/classes/Post.class.php');
 include_once('includes/classes/User.class.php');
 
 //header & sidemenu
+$page_title = 'Radera';
 include('includes/header.php');
 include('includes/sidemenu.php');
 
@@ -38,7 +39,7 @@ if(isset($message)) {
     echo $message;
 }
 ?>
-    <h1>Radera</h1>
+    <h1><?=$page_title;?></h1>
 
 
 
@@ -69,7 +70,7 @@ foreach($posts as $post) {
                 <?= $post->created; ?>
             </td>
             <td>
-                <?= mb_strimwidth($post->content, 0, 50, "..."); ?>
+                <?= custom_strimwidth($post->content, 0, 50, "..."); ?>
             </td>
         </tr>
 <?php

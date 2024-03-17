@@ -11,6 +11,7 @@ $config = include_once('./system/config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/theme.css" />
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <title><?= $page_title ?></title>
 
 </head>
 

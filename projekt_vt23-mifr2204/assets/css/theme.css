@@ -209,6 +209,10 @@ input[type=text], input[type=password], input[type=email], .input, textarea {
     border-radius: 3px;
 }
 
+input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled, .input:disabled, textarea:disabled {
+    background: lightgray;
+}
+
 input.maxsize {
     max-width: 300px;
 }
@@ -308,6 +312,11 @@ section.bottom {
 }
 
 @media only screen and (max-width: 1000px) {
+
+    h1 {
+        position: initial;
+    }
+
     .articlegrid {
         display: block;
     }

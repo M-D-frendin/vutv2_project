@@ -6,6 +6,7 @@ include_once('includes/classes/User.class.php');
 include_once('includes/classes/Post.class.php');
 
 //header & sidemenu
+$page_title = 'Skapa Blogginlägg';
 include('includes/header.php');
 include('includes/sidemenu.php');
 
@@ -34,7 +35,7 @@ if(isset($_POST['title'])) {
 }
 ?>
 
-<h1>Skapa Blogginlägg</h1>
+<h1><?=$page_title;?></h1>
 <?php
 //visa dynamiskt meddelande
 if(isset($message)) {

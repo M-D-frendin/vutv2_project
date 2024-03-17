@@ -5,7 +5,16 @@ include_once('system/common.php');
 include_once('includes/classes/Post.class.php');
 include_once('includes/classes/User.class.php');
 
+//användare att hämta Posts från, id från $_GET eller inloggad användare om id från $_GET inte existerar
+if (isset($_GET['userid'])) {
+    $user = User::getUnique(intval($_GET['userid']));
+} else {
+    $user = User::getLoggedInUser();
+}
+
+
 //header & sidemenu
+$page_title = 'Blogginlägg: ' . $user->username;
 include('includes/header.php');
 ?>
 <h1>Mina Inlägg</h1>
@@ -38,19 +47,10 @@ if (isset($_GET['pagesize'])) {
     $pagesize = intval($_GET['pagesize']);
 }
 
-//användare att hämta Posts från, id från $_GET eller inloggad användare om id från $_GET inte existerar
-if (isset($_GET['userid'])) {
-    $user = User::getUnique(intval($_GET['userid']));
-} else {
-    $user = User::getLoggedInUser();
-}
-
 //hämta alla Posts från vald användare
 $posts = $user->getPosts($page, $pagesize);
 ?>
-
-
-    <h2><?=$user->username;?></h2>
+    <h1><?=$page_title;?></h1>
 
 
 <table class="table">
@@ -75,13 +75,13 @@ foreach($posts as $post) {
 
 <tr>
     <td>
-        <?= mb_strimwidth($post->title, 0, 50, "..."); ?>
+        <?= custom_strimwidth($post->title, 0, 50, "..."); ?>
     </td>
     <td>
         <?= $post->created; ?>
     </td>
     <td>
-        <?= mb_strimwidth($post->content, 0, 50, "..."); ?>
+        <?= custom_strimwidth($post->content, 0, 50, "..."); ?>
     </td>
     <td>
         <a class="readbtn" href="./posts.php?id=<?= $post->id; ?>">Läs mer</a>

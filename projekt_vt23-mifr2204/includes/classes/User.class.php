@@ -234,6 +234,9 @@ class User {
 
     //hämtar inloggad användare
     public static function getLoggedInUser(): User {
+        if (!array_key_exists('userid', $_SESSION)) {
+            throw new Exception('Kan inte avgöra inloggad användare.');
+        }
         if (!is_int($_SESSION['userid'])) {
             throw new Exception('Kan inte avgöra inloggad användare.');
         }
