@@ -46,7 +46,7 @@ $posts = Post::allPostsWithLimit(5); //skapar en lista med Post instanser med al
 
 ?>
     </div>
-</main>
+
 <?php
 //footer
 include('includes/footer.php');

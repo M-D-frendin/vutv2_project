@@ -1,12 +1,9 @@
 <?php
 /*Skapad av Mikaela Frendin mifr2204@student.miun.se*/
 ?>
-                </section>
-
-            </div>
-        </section>
-
-        <section class="bottom">
+</section>
+</main>
+                   <section class="bottom">
             <div class="container">
                 
                 Made with ☕ 2023 - Mikaela Frendin

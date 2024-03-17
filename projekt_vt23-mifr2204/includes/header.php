@@ -16,7 +16,7 @@ $config = include_once('./system/config.php');
 
 <body>
 
-    <img id="hamburgermenu" src="./assets/img/menu-svgrepo-com.svg" />
+    <img id="hamburgermenu" src="./assets/img/menu-svgrepo-com.svg" alt="hamburgerlines" />
 
     <section class="top">
         <div  id="classcont" class="container">

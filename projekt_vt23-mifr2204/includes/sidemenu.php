@@ -64,12 +64,12 @@
             //räkna hur många posts varje användare har
             $numerOfPosts = Post::countPostsByUserId($user->id);
     ?>
-            <li><a class="submenu" class="button" class="userlist" href="./userpost.php?userid=<?= $user->id; ?>"><?= $user->username; ?> (<?= $numerOfPosts; ?>)</a></li>   
+            <li><a class="submenu" href="./userpost.php?userid=<?= $user->id; ?>"><?= $user->username; ?> (<?= $numerOfPosts; ?>)</a></li>   
     <?php
         }
     ?>
         </ul>
     </div>
             </nav>
-        <div class="container">
+     
 

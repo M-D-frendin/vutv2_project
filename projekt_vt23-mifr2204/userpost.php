@@ -7,6 +7,15 @@ include_once('includes/classes/User.class.php');
 
 //header & sidemenu
 include('includes/header.php');
+?>
+<h1>Mina Inlägg</h1>
+
+</div>
+    </section>
+    
+
+<main>
+<?php
 include('includes/sidemenu.php');
 
 //inloggad användare
@@ -39,7 +48,9 @@ if (isset($_GET['userid'])) {
 //hämta alla Posts från vald användare
 $posts = $user->getPosts($page, $pagesize);
 ?>
-    <h1><?=$user->username;?></h1>
+
+
+    <h2><?=$user->username;?></h2>
 
 
 <table class="table">
@@ -108,7 +119,7 @@ if (isset($_GET['userid'])) {
         $url = $url . '&userid=' . $_GET['userid'];
 }
 
-echo '<li><a href="' . $url . '&page=1">|<</a></li>';
+echo '<li><a href="' . $url . '&page=1">|</a></li>';
 for ($i = 1; $i <= $numberOfPages; $i++) {
     echo '<li>';
     $class = '';
