@@ -35,6 +35,7 @@ if(isset($_POST['title'])) {
 }
 ?>
 
+<div>
 <h1><?=$page_title;?></h1>
 <?php
 //visa dynamiskt meddelande
@@ -64,6 +65,7 @@ if(!isset($_POST['title'])) {
 <?php
 }
 ?>
+</div>
 <script>
     CKEDITOR.replace( 'content' );
 </script>

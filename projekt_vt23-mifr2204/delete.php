@@ -39,6 +39,8 @@ if(isset($message)) {
     echo $message;
 }
 ?>
+
+<div>
     <h1><?=$page_title;?></h1>
 
 
@@ -84,6 +86,7 @@ foreach($posts as $post) {
     </div>
     
 </form>
+</div>
 
 <?php
 //footer
