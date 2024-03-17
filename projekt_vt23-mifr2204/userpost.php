@@ -17,7 +17,7 @@ if (isset($_GET['userid'])) {
 $page_title = 'Blogginlägg: ' . $user->username;
 include('includes/header.php');
 ?>
-<h1>Mina Inlägg</h1>
+
 
 </div>
     </section>

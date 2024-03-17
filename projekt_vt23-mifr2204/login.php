@@ -59,7 +59,7 @@ include('includes/sidemenu.php');
             <p>Har du inget konto? Skapa ett <a href="./newuser.php">HÄR</a></p>
         </div>
     </form>
-</main>
+
 <?php
 //footer
 include('includes/footer.php');

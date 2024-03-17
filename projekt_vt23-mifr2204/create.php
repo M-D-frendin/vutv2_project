@@ -8,7 +8,7 @@ include_once('includes/classes/Post.class.php');
 //header & sidemenu
 $page_title = 'Skapa Blogginlägg';
 include('includes/header.php');
-include('includes/sidemenu.php');
+
 
 //användare måste vara inloggad för att på se sidan
 if(!User::isAuthenticated()) {
@@ -36,7 +36,14 @@ if(isset($_POST['title'])) {
 ?>
 
 <h1><?=$page_title;?></h1>
+
+</div>
+    </section>
+
+<main>
+
 <?php
+include('includes/sidemenu.php');
 //visa dynamiskt meddelande
 if(isset($message)) {
     echo $message;
