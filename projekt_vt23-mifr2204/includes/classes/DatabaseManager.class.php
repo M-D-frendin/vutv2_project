@@ -1,4 +1,5 @@
 <?php
+/*Skapad av Mikaela Frendin mifr2204@student.miun.se*/
 include_once('./system/config.php');
 
 //databas hanteras via singleton designmönster för att undvika att flera instanser skapas samtidigt mot samma databas

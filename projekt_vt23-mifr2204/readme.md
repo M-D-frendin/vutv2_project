@@ -1,8 +1,5 @@
 Mikaela Frendin
 
-Jag har skapat en sida där man kan läsa nyheter samt logga in 
-när man är inloggd kan man skapa nyheter och radera dom. 
-Man får varningar om man gör något fel vid inloggning eller vid skapande. Man får bekräftelse på t.ex att man deletat en nyhet
-det finns fler säkerhetsfunktioner bl.a så man inte kan skriv in kommandon som ändrar databasen. 
-
-Jag halkade efter så denna uppgiften är gjord efter kursslut och har därför tagit min man till hjälp som "privatlärare"
+Denna uppgiften har gjorts med PHP och är en blogg 
+Man kan se, skapa, redigera och radera inlägg
+man kan även skapa en användare och logga in och ut

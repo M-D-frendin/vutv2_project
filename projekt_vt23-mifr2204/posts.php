@@ -1,4 +1,6 @@
 <?php
+/*Skapad av Mikaela Frendin mifr2204@student.miun.se*/
+
 include_once('system/common.php');
 include_once('includes/classes/Post.class.php');
 
