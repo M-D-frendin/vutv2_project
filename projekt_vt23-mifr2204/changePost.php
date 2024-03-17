@@ -6,9 +6,9 @@ include_once('includes/classes/User.class.php');
 include_once('includes/classes/Post.class.php');
 
 //header & sidemenu
-$page_title = 'Redigera Blogginlägg';
+$page_title = 'Redigera inlägg';
 include('includes/header.php');
-include('includes/sidemenu.php');
+
     
 //användare måste vara inloggad för att på se sidan
 if(!User::isAuthenticated()) {
@@ -52,10 +52,17 @@ if(isset($message)) {
 $post = Post::getUnique($id);
 ?>
 
-<div>
+
     <h1><?=$page_title;?></h1>
 
+    </div>
+    </section>
 
+<main>
+
+<?php
+include('includes/sidemenu.php');
+?>
 <div id="createForm">
     <form action="./changePost.php?id=<?php echo $_GET['id']; ?>" method="post">
         <div class="form-field">
@@ -76,7 +83,7 @@ $post = Post::getUnique($id);
         </div>
     </form>
 </div>
-</div>
+
 
 
 <script>

@@ -13,7 +13,7 @@ if (isset($_GET['userid'])) {
 }
 
 //header & sidemenu
-$page_title = 'Blogginlägg: ' . $selectedUser->username;
+$page_title = 'Blogginlägg'
 include('includes/header.php');
 ?>
 
