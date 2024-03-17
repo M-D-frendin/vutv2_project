@@ -313,6 +313,14 @@ section.bottom {
     max-height: 8em;
 }
 
+.index-article-list article {
+    max-width: 100%;
+}
+
+.index-article-list article .content {
+    max-width: 100%;
+}
+
 @media only screen and (max-width: 1000px) {
 
     h1 {
