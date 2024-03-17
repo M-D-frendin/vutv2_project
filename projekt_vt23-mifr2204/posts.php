@@ -18,19 +18,25 @@ $post = Post::getUnique($id);
 //header & sidemenu
 $page_title = $post->title;
 include('includes/header.php');
-include('includes/sidemenu.php');
+
 ?>
 
-<div>
-<h1><?=$page_title;?></h1>
+    <h1><?=$page_title;?></h1>
 
+</div>
+    </section>
+
+<main >
+<?php
+include('includes/sidemenu.php');
+?>
 
 <?= $post->content; ?>
 
 <div id="id">
-<?= $id; ?>
+
 </div>
-</div>
+
 
 <?php
 //footer

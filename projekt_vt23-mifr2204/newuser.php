@@ -46,7 +46,7 @@ include('includes/sidemenu.php');
 //om formuläret ska visas (om en användare inte precis har skapats)
 if ($showform) {
     ?>
-<form action="./newuser.php" method="post">
+<form id="newUf"action="./newuser.php" method="post">
 
 
 <div class="form-field">

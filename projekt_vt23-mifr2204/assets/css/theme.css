@@ -3,17 +3,7 @@
     box-sizing: border-box;
 }
 
-h1 {
-    text-align: center;
-    position: absolute;
-    top: 10%;
-    right: 20%;
-    left: 20%;
-    background-color:rgba(255, 255, 255, 0.7);
-    font-size: 60px;
-    padding: 20px;
 
-}
 /*top section and header*/
 #classcont {
     position: relative;
@@ -212,7 +202,9 @@ input[type=text], input[type=password], input[type=email], .input, textarea {
 input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled, .input:disabled, textarea:disabled {
     background: lightgray;
 }
-
+#creatform .formfield{
+    font-size: 80;
+}
 input.maxsize {
     max-width: 300px;
 }
@@ -220,9 +212,17 @@ input.maxsize {
 form {
     width: 100%;
 }
-
+#newUf{
+    margin-left: 20px;
+    margin-top: 40px;
+}
 form .form-field {
     margin-bottom: 1em;
+}
+
+#loginform {
+    margin-top: 50px;
+    margin-left: 30px;
 }
 /*footer*/
 section.bottom {
@@ -321,10 +321,39 @@ section.bottom {
     max-width: 100%;
 }
 
-@media only screen and (max-width: 1000px) {
+.index-article-list article {
+    max-width: 100%;
+}
 
-    h1 {
-        position: initial;
+.index-article-list article .content {
+    max-width: 100%;
+}
+
+h1, #classcont h1 {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    left: 20%;
+    background-color:rgba(255, 255, 255, 0.7);
+    font-size: 60px;
+    padding: 20px;
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    h1, #classcont h1 {
+        text-align: center;
+        position: absolute;
+        top: 0%;
+        right: 20%;
+        left: 20%;
+        background-color:rgba(255, 255, 255, 0.7);
+        font-size: 50px;
+        padding: 20px;
+        margin-top: 10px;
+    
     }
 
     .articlegrid {
@@ -354,6 +383,18 @@ section.bottom {
         padding: 1em;
         cursor: pointer;
         transition: background-color ease-in-out .2s;
+    }
+    h1, #classcont h1 {
+        text-align: center;
+        position: absolute;
+        top: 0%;
+        right: 20%;
+        left: 20%;
+        background-color:rgba(255, 255, 255, 0.7);
+        font-size: 40px;
+        padding: 10px;
+        margin-top: 2px;
+    
     }
 
     #hamburgermenu:hover {

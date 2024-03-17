@@ -6,7 +6,7 @@ include_once('includes/classes/User.class.php');
 include_once('includes/classes/Post.class.php');
 
 //header & sidemenu
-$page_title = 'Skapa Blogginlägg';
+$page_title = 'Skapa inlägg';
 include('includes/header.php');
 
 
@@ -26,9 +26,6 @@ if(isset($_POST['title'])) {
     try {
         $post = Post::newPost($newPostArgs);
         $message = "<div class='status'>✔️ Sidan är skapad</div>";
-        ?>
-        <a href="./create.php">Skapa Nytt inlägg</a>
-        <?php
     } catch (Exception $e) {
         $message = '<div class="alert">' . $e->getMessage() . '</div>';
     }
@@ -41,7 +38,7 @@ if(isset($_POST['title'])) {
 </div>
     </section>
 
-<main>
+<main id="createmain">
 
 <?php
 include('includes/sidemenu.php');
