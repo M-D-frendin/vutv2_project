@@ -7,14 +7,13 @@ include_once('includes/classes/User.class.php');
 
 //användare att hämta Posts från, id från $_GET eller inloggad användare om id från $_GET inte existerar
 if (isset($_GET['userid'])) {
-    $user = User::getUnique(intval($_GET['userid']));
+    $selectedUser = User::getUnique(intval($_GET['userid']));
 } else {
-    $user = User::getLoggedInUser();
+    $selectedUser = User::getLoggedInUser();
 }
 
-
 //header & sidemenu
-$page_title = 'Blogginlägg: ' . $user->username;
+$page_title = 'Blogginlägg: ' . $selectedUser->username;
 include('includes/header.php');
 ?>
 
@@ -26,6 +25,7 @@ include('includes/header.php');
 <main>
 <?php
 include('includes/sidemenu.php');
+
 
 //inloggad användare
 if (User::isAuthenticated())
@@ -47,8 +47,10 @@ if (isset($_GET['pagesize'])) {
     $pagesize = intval($_GET['pagesize']);
 }
 
+
+
 //hämta alla Posts från vald användare
-$posts = $user->getPosts($page, $pagesize);
+$posts = $selectedUser->getPosts($page, $pagesize);
 ?>
 <div>
     <h1><?=$page_title;?></h1>
@@ -88,7 +90,7 @@ foreach($posts as $post) {
         <?php
         if ($loggedInUser)
         {
-        if ($loggedInUser->id === $user->id)
+        if ($loggedInUser->id === $selectedUser->id)
         {
         ?>
         |
@@ -113,7 +115,7 @@ foreach($posts as $post) {
 <ul class="pagination">
 <?php
 //pagination - visa navigation för pages
-$numberOfPages = Post::postPagesByUserId($user->id, $pagesize);
+$numberOfPages = Post::postPagesByUserId($selectedUser->id, $pagesize);
 $url = '?a=1';
 if (isset($_GET['userid'])) {
         $url = $url . '&userid=' . $_GET['userid'];
