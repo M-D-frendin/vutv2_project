@@ -312,6 +312,11 @@ section.bottom {
 }
 
 @media only screen and (max-width: 1000px) {
+
+    h1 {
+        position: initial;
+    }
+
     .articlegrid {
         display: block;
     }
