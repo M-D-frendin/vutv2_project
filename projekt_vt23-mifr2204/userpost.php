@@ -8,7 +8,12 @@ include('includes/header.php');
 include('includes/sidemenu.php');
 
 //inloggad användare
-$loggedInUser = User::getLoggedInUser();
+if (User::isAuthenticated())
+{
+    $loggedInUser = User::getLoggedInUser();
+} else {
+    $loggedInUser = false;
+}
 
 //aktuell sida för pagination, 1 som standard
 $page = 1;
@@ -17,7 +22,7 @@ if (isset($_GET['page'])) {
 }
 
 //antal rader per sida, 50 som standard
-$pagesize = 1;
+$pagesize = 50;
 if (isset($_GET['pagesize'])) {
     $pagesize = intval($_GET['pagesize']);
 }
@@ -32,8 +37,12 @@ if (isset($_GET['userid'])) {
 //hämta alla Posts från vald användare
 $posts = $user->getPosts($page, $pagesize);
 ?>
+    <h1><?=$user->username;?></h1>
+
+
 <table class="table">
     <thead>
+        <tr>
         <th>
             Titel
         </th>
@@ -44,6 +53,7 @@ $posts = $user->getPosts($page, $pagesize);
             Innehåll
         </th>
         <th></th>
+        </tr>
     </thead>
     <tbody>
 <?php
@@ -63,12 +73,15 @@ foreach($posts as $post) {
     <td>
         <a class="readbtn" href="./posts.php?id=<?= $post->id; ?>">Läs mer</a>
         <?php
+        if ($loggedInUser)
+        {
         if ($loggedInUser->id === $user->id)
         {
         ?>
         |
         <a class="changebtn" href="./changePost.php?id=<?= $post->id; ?>">Ändra</a>
         <?php
+        }
         }
         ?>
     </td>
@@ -82,21 +95,28 @@ foreach($posts as $post) {
 </table>
 
 
+
+
 <ul class="pagination">
 <?php
 //pagination - visa navigation för pages
 $numberOfPages = Post::postPagesByUserId($user->id, $pagesize);
-echo '<li><a href="?page=1">|<</a></li>';
+$url = '?a=1';
+if (isset($_GET['userid'])) {
+        $url = $url . '&userid=' . $_GET['userid'];
+}
+
+echo '<li><a href="' . $url . '&page=1">|<</a></li>';
 for ($i = 1; $i <= $numberOfPages; $i++) {
     echo '<li>';
     $class = '';
     if ($i == $page) {
         $class = 'current';
     }
-    echo '<a href="?page=' . $i . '" class="' . $class . '">' . $i . '</a>';
+    echo '<a href="' . $url . '&page=' . $i . '" class="' . $class . '">' . $i . '</a>';
     echo '</li>';
 }
-echo '<li><a href="?page=' . $numberOfPages . '">>|</a></li>';
+echo '<li><a href="' . $url . '&page=' . $numberOfPages . '">>|</a></li>';
 ?>
 </ul>
 

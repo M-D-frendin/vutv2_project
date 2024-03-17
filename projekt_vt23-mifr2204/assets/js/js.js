@@ -2,22 +2,24 @@
 //döljer/visar menyn för blogg
 blogglink = document.getElementById('blogglink');
 
-blogglink.onclick = function(){
-    var all = document.getElementById("alllink");
-    var create = document.getElementById("createlink");
-    var del = document.getElementById("deletelink");
-    
-    if (create.style.display === "block") {
-        all.style.display = "none";
-        create.style.display = "none";
+if (blogglink) {
+    blogglink.onclick = function(){
+        var all = document.getElementById("alllink");
+        var create = document.getElementById("createlink");
+        var del = document.getElementById("deletelink");
+        
+        if (create.style.display === "block") {
+            all.style.display = "none";
+            create.style.display = "none";
 
-        del.style.display = "none";
-    } else {
-        all.style.display = "block";
-        create.style.display = "block";
-        del.style.display = "block";
-    }
-    return false;
+            del.style.display = "none";
+        } else {
+            all.style.display = "block";
+            create.style.display = "block";
+            del.style.display = "block";
+        }
+        return false;
+    };
 };
 
 //döljer/visar listan för användare
@@ -59,3 +61,33 @@ hamburgermenu.onclick = function(){
         sidebar.className = 'sidebar';
     }
 };
+
+
+var tableSelect = document.getElementsByClassName("table-select");
+for (let i = 0; i < tableSelect.length; i++) {
+
+    let checkbox = tableSelect[i].getElementsByClassName('checkbox')[0];
+
+    checkbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+            tableSelect[i].className = 'table-select selected';
+        } else {
+            tableSelect[i].className = 'table-select';
+        }
+      })
+
+    tableSelect[i].onclick = function(ev){
+        if (ev.srcElement.nodeName == 'INPUT') {
+            return;
+        }
+        if (checkbox.checked)
+        {
+            tableSelect[i].className = 'table-select';
+            checkbox.checked = false;
+        } else {
+            tableSelect[i].className = 'table-select selected';
+            checkbox.checked = true;
+        }
+    };
+}
+

@@ -29,7 +29,7 @@ if(isset($_POST['email'])) {
 
 }
 ?>
-<h2>Skapa konto</h2>
+<h1>Skapa konto</h1>
 
 <?php
 //om formuläret ska visas (om en användare inte precis har skapats)
@@ -40,30 +40,30 @@ if ($showform) {
 
 <div class="form-field">
     <label for="forname">Förnamn</label>
-    <input type="text" name="forname" id="forname" />
+    <input type="text" name="forname" id="forname" class="maxsize" />
 </div>
 <div class="form-field">
     <label for="lastname">Efternamn</label>
-    <input type="text" name="lastname" id="lastname" />
+    <input type="text" name="lastname" id="lastname" class="maxsize" />
 </div>
 <div class="form-field">
     <label for="email">E-mail</label>
-    <input type="text" name="email" id="email" />
+    <input type="text" name="email" id="email" class="maxsize" />
 </div>
 <div class="form-field">
     <label for="username">Användarnamn</label>
-    <input type="text" name="username" id="username" />
+    <input type="text" name="username" id="username" class="maxsize" />
 </div>
 <div class="form-field">
     <label for="password">Lösenord</label>
-    <input type="password" name="password" id="password" />
+    <input type="password" name="password" id="password" class="maxsize" />
 </div>
 <div class="form-field">
     <label for="password2">Bekräfta lösenord</label>
-    <input type="password" name="password2" id="password2" />
+    <input type="password" name="password2" id="password2" class="maxsize" />
 </div>
 <div class="form-field">
-    <input type="submit" value="Skapa Konto" />
+    <input type="submit" value="Skapa Konto" class="button flat" />
 </div>
 
 </form>

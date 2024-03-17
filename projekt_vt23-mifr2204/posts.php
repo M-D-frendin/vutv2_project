@@ -17,7 +17,9 @@ if(isset($_GET['id'])) {
 $post = Post::getUnique($id);
 ?>
 
-<h3><?= $post->title; ?><h3>
+<h1><?= $post->title; ?></h1>
+
+
 <?= $post->content; ?>
 
 <div id="id">

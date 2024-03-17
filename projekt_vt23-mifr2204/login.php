@@ -36,11 +36,11 @@ include('includes/sidemenu.php');
     <form id="loginform" action="./login.php" method="post">
         <div class="form-field">
             <label for="username">Användarnamn</label>
-            <input type="text" name="username" id="username" />
+            <input type="text" name="username" id="username" class="maxsize" />
         </div>
         <div class="form-field">
             <label for="password">Lösenord</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" id="password" class="maxsize" />
         </div>
         <?php
             //dynamiskt meddelande
@@ -49,7 +49,7 @@ include('includes/sidemenu.php');
             }
         ?>
         <div class="form-field">
-            <input type="submit" value="Logga in" />
+            <input type="submit" value="Logga in" class="button flat" />
         </div>
 
         <div class="form-field">

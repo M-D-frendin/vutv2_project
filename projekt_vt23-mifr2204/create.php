@@ -32,7 +32,7 @@ if(isset($_POST['title'])) {
 }
 ?>
 
-<h2>Skapa Blogginlägg</h2>
+<h1>Skapa Blogginlägg</h1>
 <?php
 //visa dynamiskt meddelande
 if(isset($message)) {
@@ -46,15 +46,15 @@ if(!isset($_POST['title'])) {
     <form action="./create.php" method="post">
         <div class="form-field">
             <label for="title">Titel</label>
-            <input type="text" name="title" id="title" />
+            <input type="text" name="title" id="title" class="maxsize" />
         </div>
         <div class="form-field">
             <label for="content">Innehåll</label>
-            <textarea name="content" id="content" rows="15"></textarea>
+            <textarea name="content" id="content" rows="15" class="maxsize"></textarea>
         </div>
 
         <div class="form-field">
-            <input id="createbtn" type="submit" value="Skapa" />
+            <input id="createbtn" type="submit" value="Skapa" class="button flat" />
         </div>
     </form>
 </div>

@@ -48,15 +48,15 @@ if(isset($message)) {
 //hämta Post som variabel
 $post = Post::getUnique($id);
 ?>
-<h2>Redigera Blogginlägg</h2>
+<h1>Redigera Blogginlägg</h1>
 
-
-<div id="id">
-<?= $id; ?>
-</div>
 
 <div id="createForm">
     <form action="./changePost.php?id=<?php echo $_GET['id']; ?>" method="post">
+        <div class="form-field">
+            <label for="postid">ID</label>
+            <input type="text" name="postid" id="postid" value="<?= $post->id; ?>" disabled />
+        </div>
         <div class="form-field">
             <label for="title">Titel</label>
             <input type="text" name="title" id="title" value="<?= $post->title; ?>"/>

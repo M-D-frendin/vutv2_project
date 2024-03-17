@@ -36,33 +36,48 @@ if(isset($message)) {
     echo $message;
 }
 ?>
+    <h1>Radera</h1>
+
 
 
 <form action="./delete.php" method="post">
-    <ul>
-    
-    <?php
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Titel</th>
+            <th>Skapad</th>
+            <th>Innehåll</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php
 foreach($posts as $post) {
-    ?>
-    <input type="hidden" name="id[]" value="<?=$post->id?>">
-    <input type="checkbox" name="checkboxn[]" id="<?=$post->id?>" value="<?=$post->id?>">
-    <li>
-    <h3><?= $post->title; ?></h3>
-    <p>________________________ </p>
-    <p>Skapad <?= $post->created; ?> </p>
-    <div class="by">
-    <p>Av</p>
-    <p class="username"> <?= $user->username; ?></p>
-    <p class="underscore">________________________ </p>
-    <h4><?= $post->content; ?></h4>
-    </li>
-    </ul>
-    <?php
+?>
+        <tr class="table-select">
+            <td>
+                <input type="hidden" name="id[]" value="<?=$post->id?>">
+                <input type="checkbox" name="checkboxn[]" class="checkbox" id="<?=$post->id?>" value="<?=$post->id?>">
+            </td>
+            <td>
+                <?= $post->title; ?>
+            </td>
+            <td>
+                <?= $post->created; ?>
+            </td>
+            <td>
+                <?= mb_strimwidth($post->content, 0, 50, "..."); ?>
+            </td>
+        </tr>
+<?php
 }
 ?>
+    </tbody>
+</table>
     
     <div class="form-field">
-        <input id="deletebtn" type="submit" value="Ta bort inlägg" />
+        <input id="deletebtn" type="submit" value="Ta bort inlägg" class="button flat" />
     </div>
     
 </form>

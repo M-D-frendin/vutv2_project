@@ -14,18 +14,20 @@ $posts = Post::allPostsWithLimit(5); //skapar en lista med Post instanser med al
 </div>
     </section>
 
-<main >
+<main>
     
     <?php
     //visa sidemenu
     include('includes/sidemenu.php');
-
+    ?>
+    <div class="articlegrid">
+    <?php
     //visa alla Posts
     foreach($posts as $post) {
     ?>
         <article>
 
-        <h2><?= $post->title; ?></h2>
+        <h2><a href="posts.php?id=<?= $post->id; ?>"><?= $post->title; ?></a></h2>
 
         <p class="crebyp">Skapad <?= $post->created; ?> </p>
         <div class="by">
@@ -33,13 +35,15 @@ $posts = Post::allPostsWithLimit(5); //skapar en lista med Post instanser med al
             <p class="username"> <?= $post->getUser()->username;?> </p>
         </div>
  
-        <p><?= $post->content; ?></p>
+        <div class="content">
+            <?= $post->content; ?>
+        </div>
         </article>
     <?php
     }
 
 ?>
-
+    </div>
 </main>
 <?php
 //footer
