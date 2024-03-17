@@ -50,9 +50,9 @@ if (isset($_GET['pagesize'])) {
 //hämta alla Posts från vald användare
 $posts = $user->getPosts($page, $pagesize);
 ?>
+<div>
     <h1><?=$page_title;?></h1>
 
-<div>
 <table class="table">
     <thead>
         <tr>
