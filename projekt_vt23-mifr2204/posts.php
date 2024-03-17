@@ -21,6 +21,7 @@ include('includes/header.php');
 include('includes/sidemenu.php');
 ?>
 
+<div>
 <h1><?=$page_title;?></h1>
 
 
@@ -28,6 +29,7 @@ include('includes/sidemenu.php');
 
 <div id="id">
 <?= $id; ?>
+</div>
 </div>
 
 <?php

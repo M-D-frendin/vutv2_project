@@ -51,6 +51,8 @@ if(isset($message)) {
 //hämta Post som variabel
 $post = Post::getUnique($id);
 ?>
+
+<div>
     <h1><?=$page_title;?></h1>
 
 
@@ -73,6 +75,7 @@ $post = Post::getUnique($id);
             <input id="createbtn" type="submit" value="Uppdatera Inlägg" class="button flat" />
         </div>
     </form>
+</div>
 </div>
 
 
