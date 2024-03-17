@@ -12,7 +12,7 @@ include('includes/header.php');
 
 $posts = Post::allPostsWithLimit(5); //skapar en lista med Post instanser med alla posts GG
 ?>
-    <h1>Blogginlägg</h1>
+    <h1><?=$page_title;?></h1>
 
 </div>
     </section>

@@ -35,7 +35,7 @@ if(isset($_POST['title'])) {
 }
 ?>
 
-<h1>Skapa Blogginlägg</h1>
+<h1><?=$page_title;?></h1>
 <?php
 //visa dynamiskt meddelande
 if(isset($message)) {

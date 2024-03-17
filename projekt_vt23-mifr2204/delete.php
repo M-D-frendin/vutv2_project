@@ -39,7 +39,7 @@ if(isset($message)) {
     echo $message;
 }
 ?>
-    <h1>Radera</h1>
+    <h1><?=$page_title;?></h1>
 
 
 

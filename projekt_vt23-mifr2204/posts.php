@@ -21,7 +21,7 @@ include('includes/header.php');
 include('includes/sidemenu.php');
 ?>
 
-<h1><?= $post->title; ?></h1>
+<h1><?=$page_title;?></h1>
 
 
 <?= $post->content; ?>

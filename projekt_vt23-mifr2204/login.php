@@ -27,7 +27,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'logout') {
     echo '<div class="status">✔️ Du har nu loggat ut.</div>';
 }
 ?>
-  <h1>Logga in</h1>
+    <h1><?=$page_title;?></h1>
 
 </div>
     </section>

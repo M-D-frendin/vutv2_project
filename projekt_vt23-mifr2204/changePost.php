@@ -51,7 +51,7 @@ if(isset($message)) {
 //hämta Post som variabel
 $post = Post::getUnique($id);
 ?>
-<h1>Redigera Blogginlägg</h1>
+    <h1><?=$page_title;?></h1>
 
 
 <div id="createForm">

@@ -32,7 +32,7 @@ if(isset($_POST['email'])) {
 
 }
 ?>
-<h1>Skapa konto</h1>
+    <h1><?=$page_title;?></h1>
 
 <?php
 //om formuläret ska visas (om en användare inte precis har skapats)
